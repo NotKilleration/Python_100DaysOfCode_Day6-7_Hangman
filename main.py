@@ -1,70 +1,19 @@
 import random
+import hangman_words.py
+import hangman_art.py
 #Step 1 
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
 
-word_list = ["aardvark", "baboon", "camel"]
+
+# word_list = ["aardvark", "baboon", "camel"]
 
 #TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
 
-chosen_word = random.choice(word_list)
+chosen_word = random.choice(hangman_words.word_list)
 
 chances = 6
+
+print(hangman_art.logo)
 
 print(f"Testing: {chosen_word}")
 
@@ -98,4 +47,4 @@ while not end_of_game:
         end_of_game = True
         print("You Win!")
 
-    print(stages[chances])
+    print(hangman_art.stages[chances])
